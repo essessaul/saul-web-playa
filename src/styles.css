@@ -1,0 +1,73 @@
+:root{
+  --ink:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --soft:#f8fafc;
+  --accent:#ff6a1a;
+  --sea:#bfd6d2;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink)}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+input,textarea,select{
+  width:100%;border:1px solid #cbd5e1;border-radius:16px;padding:.9rem 1rem;background:#fff;outline:none;
+}
+textarea{min-height:140px;resize:vertical}
+.container{width:min(1220px,calc(100% - 2rem));margin:0 auto}
+.section{padding:4rem 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 1px 2px rgba(15,23,42,.05)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:none;border-radius:18px;padding:.85rem 1.2rem;font-weight:700;cursor:pointer}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);border:1px solid #cbd5e1}
+.badge{display:inline-flex;align-items:center;border-radius:999px;padding:.35rem .8rem;font-size:.75rem;font-weight:700}
+.badge-dark{background:var(--ink);color:#fff}
+.badge-outline{background:#fff;border:1px solid #cbd5e1;color:#334155}
+.muted{color:var(--muted)}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.site-header-inner,.footer-inner,.nav-links,.header-actions,.inline-actions,.price-row,.meta-row{display:flex;align-items:center;gap:.75rem}
+.site-header-inner,.footer-inner,.price-row{justify-content:space-between}
+.nav-links{gap:1rem;flex-wrap:wrap}
+.nav-links a.active{font-weight:700}
+.brand{display:flex;align-items:center;gap:.8rem}
+.logo-image{height:56px;object-fit:contain}
+.hero{background:linear-gradient(135deg,rgba(15,23,42,.96),rgba(30,41,59,.95));color:#fff}
+.hero-grid,.two-col,.three-col,.four-col,.module-grid,.stat-grid,.metrics-grid{display:grid;gap:1.5rem}
+.hero-grid,.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
+.three-col,.module-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.four-col,.stat-grid,.metrics-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.page-title{font-size:clamp(2rem,4vw,3.75rem);line-height:1.05;margin:.75rem 0 1rem}
+.stat-card,.module-card,.property-card,.summary-card{padding:1.5rem}
+.metric-box,.notice{background:var(--soft);border-radius:18px;padding:.9rem}
+.notice{border:1px solid var(--line)}
+.property-card img{height:220px;width:100%;object-fit:cover;border-radius:20px}
+.table-wrap{overflow-x:auto}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:1rem;text-align:left;border-bottom:1px solid var(--line)}
+.admin-tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.5rem 0}
+.admin-tabs button{border:1px solid #cbd5e1;background:#fff;color:#334155;border-radius:16px;padding:.75rem 1rem;cursor:pointer}
+.admin-tabs button.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.75rem}
+.calendar-header,.calendar-day{text-align:center;padding:.85rem;border-radius:16px}
+.calendar-header{font-weight:700;color:var(--muted)}
+.calendar-day.available{background:#fff;border:1px solid var(--line)}
+.calendar-day.booked{background:var(--ink);color:#fff}
+.calendar-day.blocked{background:#fef3c7;color:#92400e}
+.brand-banner{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+.brand-banner img{height:110px;object-fit:contain}
+.page-shell{min-height:calc(100vh - 140px)}
+@media (max-width:980px){
+  .hero-grid,.two-col,.three-col,.four-col,.module-grid,.stat-grid,.metrics-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .hero-grid,.two-col,.three-col,.four-col,.module-grid,.stat-grid,.metrics-grid{grid-template-columns:1fr}
+  .site-header-inner,.footer-inner,.nav-links,.header-actions,.inline-actions,.price-row,.meta-row{flex-direction:column;align-items:flex-start}
+  .logo-image{height:48px}
+  .brand-banner img{height:76px}
+}
